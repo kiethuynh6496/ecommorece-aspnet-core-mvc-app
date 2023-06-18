@@ -1,4 +1,4 @@
-﻿using eommerce_aspnet_mvc.Data;
+﻿using eTickets.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eommerce_aspnet_mvc.Models
+namespace eTickets.Models
 {
     public class Movie
     {

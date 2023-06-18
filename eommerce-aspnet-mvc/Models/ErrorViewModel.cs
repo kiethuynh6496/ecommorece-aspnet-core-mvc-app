@@ -1,6 +1,6 @@
 using System;
 
-namespace eommerce_aspnet_mvc.Models
+namespace eTickets.Models
 {
     public class ErrorViewModel
     {

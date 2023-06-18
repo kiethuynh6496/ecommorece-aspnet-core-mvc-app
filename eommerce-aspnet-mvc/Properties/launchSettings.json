@@ -11,11 +11,12 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "Movies",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "eommerce_aspnet_mvc": {
+    "eTickets": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

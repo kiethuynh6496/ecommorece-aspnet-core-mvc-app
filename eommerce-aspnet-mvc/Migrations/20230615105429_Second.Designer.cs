@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eommerce_aspnet_mvc.Data;
+using eTickets.Data;
 
-namespace eommerce_aspnet_mvc.Migrations
+namespace eTickets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20230615105429_Second")]

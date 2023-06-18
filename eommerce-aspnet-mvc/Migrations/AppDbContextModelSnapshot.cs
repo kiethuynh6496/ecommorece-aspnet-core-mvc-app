@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eommerce_aspnet_mvc.Data;
+using eTickets.Data;
 
-namespace eommerce_aspnet_mvc.Migrations
+namespace eTickets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace eommerce_aspnet_mvc.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Actor", b =>
+            modelBuilder.Entity("eTickets.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.ToTable("Actors");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
                 {
                     b.Property<int>("ActorId")
                         .HasColumnType("int");
@@ -55,7 +55,7 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.ToTable("Actor_Movies");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Cinema", b =>
+            modelBuilder.Entity("eTickets.Models.Cinema", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.ToTable("Cinemas");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Movie", b =>
+            modelBuilder.Entity("eTickets.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Producer", b =>
+            modelBuilder.Entity("eTickets.Models.Producer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -140,15 +140,15 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.ToTable("Producers");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
                 {
-                    b.HasOne("eommerce_aspnet_mvc.Models.Actor", "Actor")
+                    b.HasOne("eTickets.Models.Actor", "Actor")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eommerce_aspnet_mvc.Models.Movie", "Movie")
+                    b.HasOne("eTickets.Models.Movie", "Movie")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -159,15 +159,15 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Movie", b =>
+            modelBuilder.Entity("eTickets.Models.Movie", b =>
                 {
-                    b.HasOne("eommerce_aspnet_mvc.Models.Cinema", "Cinemas")
+                    b.HasOne("eTickets.Models.Cinema", "Cinemas")
                         .WithMany("Movies")
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eommerce_aspnet_mvc.Models.Producer", "Producers")
+                    b.HasOne("eTickets.Models.Producer", "Producers")
                         .WithMany("Movies")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -178,22 +178,22 @@ namespace eommerce_aspnet_mvc.Migrations
                     b.Navigation("Producers");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Actor", b =>
+            modelBuilder.Entity("eTickets.Models.Actor", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Cinema", b =>
+            modelBuilder.Entity("eTickets.Models.Cinema", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Movie", b =>
+            modelBuilder.Entity("eTickets.Models.Movie", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eommerce_aspnet_mvc.Models.Producer", b =>
+            modelBuilder.Entity("eTickets.Models.Producer", b =>
                 {
                     b.Navigation("Movies");
                 });

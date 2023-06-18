@@ -1,4 +1,5 @@
-using eommerce_aspnet_mvc.Data;
+using eTickets.Data;
+using eTickets.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eommerce_aspnet_mvc
+namespace eTickets
 {
     public class Startup
     {
@@ -30,6 +31,9 @@ namespace eommerce_aspnet_mvc
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
             });
+
+            // Services configuration
+            services.AddScoped<IActorsService, ActorsService>();
             services.AddControllersWithViews();
         }
 

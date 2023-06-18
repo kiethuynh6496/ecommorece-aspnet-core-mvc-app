@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eommerce_aspnet_mvc.Migrations
+namespace eTickets.Migrations
 {
     public partial class Second : Migration
     {

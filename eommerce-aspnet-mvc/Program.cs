@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eommerce_aspnet_mvc
+namespace eTickets
 {
     public class Program
     {
