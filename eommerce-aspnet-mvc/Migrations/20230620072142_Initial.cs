@@ -2,7 +2,7 @@
 
 namespace eTickets.Migrations
 {
-    public partial class renamesolutionname : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

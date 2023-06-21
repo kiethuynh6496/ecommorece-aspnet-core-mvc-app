@@ -24,10 +24,10 @@ namespace eTickets.Controllers
         }
 
         // Get: Actors/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Actor actor)
@@ -70,6 +70,30 @@ namespace eTickets.Controllers
                 return View(actor);
             }
             await _actorService.UpdateAsync(id, actor);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // Get: Actors/Delete/{id}
+        public async Task<IActionResult> Delete(int id)
+        {
+            var actorDetails = await _actorService.GetByIdAsync(id);
+            if (actorDetails == null)
+            {
+                return View("NotFound");
+            }
+            return View(actorDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var actorDetails = await _actorService.GetByIdAsync(id);
+            if (actorDetails == null)
+            {
+                return View("NotFound");
+            }
+            await _actorService.DeleteAsync(id);
+              
             return RedirectToAction(nameof(Index));
         }
     }
