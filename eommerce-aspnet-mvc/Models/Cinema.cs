@@ -1,11 +1,11 @@
-﻿using eTickets.Data.Base;
+﻿using TicketBooking.Data.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Models
+namespace TicketBooking.Models
 {
     public class Cinema : IEntityBase
     {

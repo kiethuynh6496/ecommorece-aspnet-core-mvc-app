@@ -1,6 +1,6 @@
-﻿using eTickets.Data;
-using eTickets.Data.Services;
-using eTickets.Models;
+﻿using TicketBooking.Data;
+using TicketBooking.Data.Services;
+using TicketBooking.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Controllers
+namespace TicketBooking.Controllers
 {
     public class ProducersController : Controller
     {

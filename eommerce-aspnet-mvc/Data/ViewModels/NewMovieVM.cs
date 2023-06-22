@@ -1,4 +1,4 @@
-﻿using eTickets.Data;
+﻿using TicketBooking.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,10 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace eTickets.Models
+namespace TicketBooking.Models
 {
     public class NewMovieVM
     {
+        public int Id { get; set; }
+
         [Display(Name = "Movie name")]
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }

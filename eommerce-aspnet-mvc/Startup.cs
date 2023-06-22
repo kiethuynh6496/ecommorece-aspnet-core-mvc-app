@@ -1,5 +1,5 @@
-using eTickets.Data;
-using eTickets.Data.Services;
+using TicketBooking.Data;
+using TicketBooking.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets
+namespace TicketBooking
 {
     public class Startup
     {

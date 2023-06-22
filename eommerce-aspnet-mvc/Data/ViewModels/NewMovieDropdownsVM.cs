@@ -1,10 +1,10 @@
-﻿using eTickets.Models;
+﻿using TicketBooking.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.ViewModels
+namespace TicketBooking.Data.ViewModels
 {
     public class NewMovieDropdownsVM
     {

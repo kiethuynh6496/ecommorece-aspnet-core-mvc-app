@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eTickets.Migrations
+namespace TicketBooking.Migrations
 {
     public partial class Initial : Migration
     {

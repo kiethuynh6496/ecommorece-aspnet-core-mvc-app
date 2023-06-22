@@ -1,4 +1,4 @@
-﻿using eTickets.Models;
+﻿using TicketBooking.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data
+namespace TicketBooking.Data
 {
     public class AppDbInitializer
     {
