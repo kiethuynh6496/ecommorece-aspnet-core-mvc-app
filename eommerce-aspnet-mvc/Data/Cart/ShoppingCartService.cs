@@ -9,14 +9,14 @@ using TicketBooking.Models;
 
 namespace eTickets.Data.Cart
 {
-    public class ShoppingCart
+    public class ShoppingCartService
     {
         private readonly AppDbContext _context;
 
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        public ShoppingCart(AppDbContext context)
+        public ShoppingCartService(AppDbContext context)
         {
             _context = context;
         }

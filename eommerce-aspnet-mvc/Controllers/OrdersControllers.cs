@@ -12,8 +12,8 @@ namespace eTickets.Controllers
     public class OrdersControllers : Controller
     {
         private readonly IMoviesService _moviesService;
-        private readonly ShoppingCart _shoppingCart;
-        public OrdersControllers(IMoviesService moviesService, ShoppingCart shoppingCart)
+        private readonly ShoppingCartService _shoppingCart;
+        public OrdersControllers(IMoviesService moviesService, ShoppingCartService shoppingCart)
         {
             _moviesService = moviesService;
             _shoppingCart = shoppingCart;
