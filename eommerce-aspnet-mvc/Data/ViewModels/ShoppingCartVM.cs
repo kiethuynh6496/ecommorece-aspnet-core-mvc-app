@@ -8,7 +8,7 @@ namespace eTickets.Data.ViewModels
 {
     public class ShoppingCartVM
     {
-        public ShoppingCartService ShoppingCart { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
         public double ShoppingCartTotal { get; set; }
     }
 }

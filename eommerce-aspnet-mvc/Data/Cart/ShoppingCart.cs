@@ -11,19 +11,19 @@ using TicketBooking.Models;
 
 namespace eTickets.Data.Cart
 {
-    public class ShoppingCartService
+    public class ShoppingCart
     {
-        private readonly AppDbContext _context;
+        public AppDbContext _context { get; set; }
 
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        public ShoppingCartService(AppDbContext context)
+        public ShoppingCart(AppDbContext context)
         {
             _context = context;
         }
 
-        public static ShoppingCartService GetShoppingCart(IServiceProvider services)
+        public static ShoppingCart GetShoppingCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var context = services.GetService<AppDbContext>();
@@ -31,7 +31,7 @@ namespace eTickets.Data.Cart
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
             session.SetString("CardId", cartId);
 
-            return new ShoppingCartService(context)
+            return new ShoppingCart(context)
             {
                 ShoppingCartId = cartId
             };
@@ -39,8 +39,7 @@ namespace eTickets.Data.Cart
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList();
-            return ShoppingCartItems;
+            return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Include(n => n.Movie).ToList()); ;
         }
 
         public double GetShoppingCartTotal()

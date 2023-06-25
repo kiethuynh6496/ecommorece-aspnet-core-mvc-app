@@ -40,7 +40,7 @@ namespace TicketBooking
             services.AddScoped<ICinemasService, CinemasService>();
             services.AddScoped<IMoviesService, MoviesService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sc => ShoppingCartService.GetShoppingCart(sc));
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 
             services.AddSession();
 

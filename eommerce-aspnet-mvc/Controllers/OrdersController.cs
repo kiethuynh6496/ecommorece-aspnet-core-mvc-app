@@ -12,8 +12,8 @@ namespace eTickets.Controllers
     public class OrdersController : Controller
     {
         private readonly IMoviesService _moviesService;
-        private readonly ShoppingCartService _shoppingCart;
-        public OrdersController(IMoviesService moviesService, ShoppingCartService shoppingCart)
+        private readonly ShoppingCart _shoppingCart;
+        public OrdersController(IMoviesService moviesService, ShoppingCart shoppingCart)
         {
             _moviesService = moviesService;
             _shoppingCart = shoppingCart;
@@ -29,6 +29,18 @@ namespace eTickets.Controllers
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(response);
+        }
+
+        public async Task<RedirectToActionResult> AddToShoppingCart(int id)
+        {
+            var item = await _moviesService.GetMovieByIdAsync(id);
+            
+            if(item != null)
+            {
+                _shoppingCart.AddItemToCart(item);
+            }
+            
+            return RedirectToAction(nameof(ShoppingCart));
         }
     }
 }
