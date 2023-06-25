@@ -9,16 +9,17 @@ using TicketBooking.Data.Services;
 
 namespace eTickets.Controllers
 {
-    public class OrdersControllers : Controller
+    public class OrdersController : Controller
     {
         private readonly IMoviesService _moviesService;
         private readonly ShoppingCartService _shoppingCart;
-        public OrdersControllers(IMoviesService moviesService, ShoppingCartService shoppingCart)
+        public OrdersController(IMoviesService moviesService, ShoppingCartService shoppingCart)
         {
             _moviesService = moviesService;
             _shoppingCart = shoppingCart;
         }
-        public IActionResult Index()
+
+        public IActionResult ShoppingCart()
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
